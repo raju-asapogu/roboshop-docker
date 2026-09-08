@@ -1,10 +1,10 @@
-FROM node:20.19.5-alpine3.22 AS build
+FROM node:20.19.5-alpine3.21 AS build
 WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
 RUN npm install
 
-FROM node:20.19.5-alpine3.22
+FROM node:20.19.5-alpine3.21
 # create user and group in alpine
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 WORKDIR /opt/server
